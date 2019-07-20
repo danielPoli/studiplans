@@ -1,0 +1,4 @@
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+COPY StudyPlans/docker/*.jar studyplans.jar
+ENTRYPOINT ["java","-jar","/studyplans.jar"]
