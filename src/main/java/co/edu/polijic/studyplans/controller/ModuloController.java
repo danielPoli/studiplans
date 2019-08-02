@@ -18,13 +18,21 @@ public class ModuloController {
     @Qualifier("ModuloService")
     private ModuloService moduloService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/listModulo")
     public List<ModuloDto> modulosList(){
         return moduloService.getModuloDtoList();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/saveModulo")
     public void saveModulo(@RequestBody @Valid ModuloDto moduloDto){
         moduloService.saveModulo(moduloDto);
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/getModulo/{id}")
+    public ModuloDto getModulo(@PathVariable Long id){
+        return moduloService.getModulo(id);
     }
 }

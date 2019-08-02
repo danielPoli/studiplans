@@ -32,6 +32,18 @@ public class DocentesController {
         docenteService.saveDocente(requestDto);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/getTeacher/{id}")
+    public DocenteDto getDocente(@PathVariable Long id){
+        return docenteService.getDocente(id);
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @DeleteMapping("/delteTeacher/{id}")
+    public void deleteDocente(@PathVariable Long id){
+        docenteService.deleteDocente(id);
+    }
+
     @PutMapping("/updateTeachers")
     public void updateDocente(@RequestBody @Valid DocenteDto requestDto){
         docenteService.updateDocente(requestDto);

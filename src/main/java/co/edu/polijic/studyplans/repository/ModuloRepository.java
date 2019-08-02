@@ -9,4 +9,5 @@ import java.io.Serializable;
 @Repository("ModuloRepository")
 public interface ModuloRepository extends JpaRepository <Modulo, Serializable> {
 
+    public abstract Modulo findByIdModulo(Long idModulo);
 }

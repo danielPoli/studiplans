@@ -22,6 +22,7 @@ private FacultadService facultadService;
         return facultadService.getFacultades();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/saveFacultad")
     public void saveFacultad(@RequestBody @Valid FacultadDto facultadDto){
         facultadService.saveFacultad(facultadDto);

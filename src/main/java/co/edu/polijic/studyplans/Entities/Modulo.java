@@ -41,7 +41,7 @@ public class Modulo implements Serializable {
     @JoinColumn(name = "PREREQUISITO_MODULO")
     private Modulo prerequisito;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "CORREQUISITO_MODULO")
     private Modulo correquisito;
 

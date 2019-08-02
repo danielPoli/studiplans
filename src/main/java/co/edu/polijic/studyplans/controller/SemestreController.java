@@ -18,11 +18,13 @@ public class SemestreController {
     @Qualifier("SemestreService")
     private SemestreService semestreService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/semestrelist")
     public List<SemestreDto> semestres(){
         return semestreService.getSemestreList();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/saveSemestre")
     public void saveSemestre(@RequestBody @Valid SemestreDto semestreDto){
         semestreService.saveSemestre(semestreDto);

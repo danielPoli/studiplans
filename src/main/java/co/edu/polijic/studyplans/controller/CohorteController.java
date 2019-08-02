@@ -17,6 +17,7 @@ public class CohorteController {
     @Qualifier("CohorteService")
     private CohorteService cohorteService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/cohorteList")
     public List<CohorteDto> cohorteList(){
         return cohorteService.getCohorteList();

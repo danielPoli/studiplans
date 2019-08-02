@@ -9,10 +9,7 @@ import java.io.Serializable;
 @Repository("DocenteRepository")
 public interface DocenteRepository extends JpaRepository<Docente, Serializable> {
 
-    //public abstract Docente findByName_teachers(String nameTeacher);
 
-    //public abstract List<Docente> findByIdentifications_teachers(Long IdentificationsTeacher);
-
-    public abstract Docente findByTipoDocumentoAndNumeroDocumento(Long tipoDocumento, Long numeroDocumento);
+    public abstract Docente findByIdDocente(Long idDocente);
 
 }

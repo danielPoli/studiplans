@@ -48,4 +48,10 @@ public class ModuloService {
             e.printStackTrace();
         }
     }
+
+    public ModuloDto getModulo(Long idModulo){
+        Modulo modulo = moduloRepository.findByIdModulo(idModulo);
+        ModuloDto moduloDto = modelMapper.map(modulo, ModuloDto.class);
+        return moduloDto;
+    }
 }

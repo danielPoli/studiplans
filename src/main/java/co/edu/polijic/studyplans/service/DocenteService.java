@@ -46,9 +46,9 @@ public class DocenteService {
         }
     }
 
-    public void deleteDocente(Long tipoDocumento, Long numeroDocumento ){
+    public void deleteDocente(Long idDocente ){
         try{
-            Docente docente = docenteRepository.findByTipoDocumentoAndNumeroDocumento(tipoDocumento, numeroDocumento);
+            Docente docente = docenteRepository.findByIdDocente(idDocente);
             docenteRepository.delete(docente);
         }catch (Exception e){
             e.printStackTrace();
@@ -58,6 +58,13 @@ public class DocenteService {
     public List<DocenteDto> getDocentesList(){
         List<Docente> docentes = docenteRepository.findAll();
         return docentes.stream().map(docente -> modelMapper.map(docente, DocenteDto.class)).collect(Collectors.toList());
+    }
+
+    public DocenteDto getDocente(Long idDocente){
+
+        Docente docente = docenteRepository.findByIdDocente(idDocente);
+        DocenteDto docenteDto  = modelMapper.map(docente, DocenteDto.class);
+        return  docenteDto;
     }
 
 
